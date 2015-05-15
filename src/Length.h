@@ -9,11 +9,17 @@
 #include <iosfwd>
 #include <string>
 
+
+enum LengthUnit{
+    CM = 1,
+    M = 100 * CM
+};
+
 class Length {
 public:
     Length(int n);
 
-    Length(int _value, std::string _unit);
+    Length(int _value, LengthUnit _unit);
 
     Length();
 
@@ -22,7 +28,7 @@ public:
 
 public:
     int _value;
-    std::string _unit;
+    LengthUnit _unit;
 };
 
 

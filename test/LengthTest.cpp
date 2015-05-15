@@ -33,28 +33,42 @@ TEST_F(LengthTest, should_not_be_equal_when_compare_two_lengths_with_different_l
 
 TEST_F(LengthTest, should_be_equal_when_compare_two_lengths_with_same_length_and_unit)
 {
-    Length lengthA(2, "cm");
-    Length lengthB(2, "cm");
+    Length lengthA(2, LengthUnit::CM);
+    Length lengthB(2, LengthUnit::CM);
     ASSERT_TRUE(lengthA == lengthB);
 }
 
 TEST_F(LengthTest, should_not_be_equal_when_compare_two_lengths_with_same_length_and_different_unit)
 {
-    Length lengthA(2, "m");
-    Length lengthB(2, "cm");
+    Length lengthA(2, LengthUnit::M);
+    Length lengthB(2, LengthUnit::CM);
     ASSERT_FALSE(lengthA == lengthB);
 }
 
 TEST_F(LengthTest, should_not_be_equal_when_compare_two_lengths_with_different_length_and_same_unit)
 {
-    Length lengthA(2, "cm");
-    Length lengthB(1, "cm");
+    Length lengthA(2, LengthUnit::CM);
+    Length lengthB(1, LengthUnit::CM);
     ASSERT_FALSE(lengthA == lengthB);
 }
 
 TEST_F(LengthTest, should_not_be_equal_when_compare_two_lengths_with_different_length_and_different_unit)
 {
-    Length lengthA(1, "m");
-    Length lengthB(2, "cm");
+    Length lengthA(1, LengthUnit::M);
+    Length lengthB(2, LengthUnit::CM);
+    ASSERT_FALSE(lengthA == lengthB);
+}
+
+TEST_F(LengthTest, should_be_equal_when_compare_two_length_with_same_logic_length_but_with_different_unit)
+{
+    Length lengthA(1, LengthUnit::M);
+    Length lengthB(100, LengthUnit::CM);
+    ASSERT_TRUE(lengthA == lengthB);
+}
+
+TEST_F(LengthTest, should_not_be_equal_when_compare_two_length_with_different_logic_length)
+{
+    Length lengthA(2 , LengthUnit::M);
+    Length lengthB(100, LengthUnit::CM);
     ASSERT_FALSE(lengthA == lengthB);
 }
