@@ -28,9 +28,14 @@ public:
 public:
     bool operator == (const Length & other)const;
 
-public:
+
+private:
+    Amount getAmountInBaseUnit()const;
+
+private:
     Amount _value;
     LengthUnit _unit;
+
 };
 
 

@@ -7,9 +7,14 @@
 
 bool Length::operator == (const Length &other)const {
 
-    return _value * _unit == other._value * other._unit;
+    return getAmountInBaseUnit() == other.getAmountInBaseUnit();
 
 }
+
+Amount Length::getAmountInBaseUnit()const {
+    return _value * _unit;
+}
+
 Length::Length(Amount n) :_value(n) {
 
 }
