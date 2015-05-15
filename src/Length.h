@@ -8,13 +8,8 @@
 
 #include <iosfwd>
 #include <string>
+#include "LengthUnit.h"
 
-
-enum LengthUnit{
-    BASEUNIT,
-    CM,
-    M
-};
 
 typedef int Amount;
 
@@ -36,7 +31,6 @@ private:
 private:
     Amount _value;
     LengthUnit _unit;
-
 };
 
 
