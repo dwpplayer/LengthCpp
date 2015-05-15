@@ -5,12 +5,13 @@
 #ifndef LENGTH_LENGTHUNIT_H
 #define LENGTH_LENGTHUNIT_H
 
+typedef unsigned int Amount;
 
 class LengthUnit {
 public:
     LengthUnit(unsigned int _conversionFactor);
 
-    unsigned int GetConversionFactor()const;
+    unsigned int toAmountInBaseUnit(Amount amount) const;
 
 
 public:

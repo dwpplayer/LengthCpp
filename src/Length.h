@@ -11,13 +11,11 @@
 #include "LengthUnit.h"
 
 
-typedef int Amount;
-
 class Length {
 public:
     Length(Amount n);
 
-    Length(Amount _value, LengthUnit _unit);
+    Length(Amount n, LengthUnit const &unit);
 
     Length();
 

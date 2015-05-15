@@ -11,7 +11,7 @@ bool Length::operator == (const Length &other)const {
 }
 
 Amount Length::getAmountInBaseUnit()const {
-    return _value * _unit.GetConversionFactor();
+    return _unit.toAmountInBaseUnit(_value);
 }
 
 Length::Length(Amount n) :Length(n, LengthUnit::M){
@@ -23,6 +23,6 @@ Length::Length():Length(0) {
 }
 
 
-Length::Length(Amount _value, LengthUnit unit) : _value(_value), _unit(unit)
+Length::Length(Amount n, LengthUnit const &unit) : _value(n), _unit(unit)
 {
 }
