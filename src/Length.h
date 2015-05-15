@@ -15,11 +15,13 @@ enum LengthUnit{
     M = 100 * CM
 };
 
+typedef int Amount;
+
 class Length {
 public:
-    Length(int n);
+    Length(Amount n);
 
-    Length(int _value, LengthUnit _unit);
+    Length(Amount _value, LengthUnit _unit);
 
     Length();
 
@@ -27,7 +29,7 @@ public:
     bool operator == (const Length & other)const;
 
 public:
-    int _value;
+    Amount _value;
     LengthUnit _unit;
 };
 
