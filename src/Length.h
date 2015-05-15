@@ -8,7 +8,15 @@
 
 class Length {
 public:
+    Length(int n);
+
+    Length();
+
+public:
     bool operator == (const Length & other)const;
+
+public:
+    int _value;
 };
 
 

@@ -12,3 +12,12 @@ TEST_F(LengthTest, should_be_equal_when_compare_two_lengths)
     Length lengthB;
     ASSERT_TRUE(lengthA == lengthB);
 }
+
+
+TEST_F(LengthTest, should_be_equal_when_compare_two_lengths_with_same_length)
+{
+    Length lengthA(100000);
+    Length lengthB(100000);
+
+    ASSERT_TRUE(lengthA == lengthB);
+}

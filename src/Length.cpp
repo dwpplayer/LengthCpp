@@ -7,3 +7,11 @@
 bool Length::operator == (const Length &other)const {
     return true;
 }
+
+Length::Length(int n) :_value(n) {
+
+}
+
+Length::Length():Length(0) {
+
+}
