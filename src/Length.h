@@ -11,8 +11,9 @@
 
 
 enum LengthUnit{
-    CM = 1,
-    M = 100 * CM
+    BASEUNIT,
+    CM,
+    M
 };
 
 typedef int Amount;

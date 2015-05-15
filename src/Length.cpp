@@ -4,6 +4,8 @@
 
 #include "Length.h"
 
+const int CM_CON_FACTOR = 1;
+const int M_CON_FACTOR = 100;
 
 bool Length::operator == (const Length &other)const {
 
@@ -12,10 +14,19 @@ bool Length::operator == (const Length &other)const {
 }
 
 Amount Length::getAmountInBaseUnit()const {
-    return _value * _unit;
+    switch(_unit)
+    {
+        case LengthUnit::CM:
+            return _value * CM_CON_FACTOR;
+        case LengthUnit::M:
+            return _value * M_CON_FACTOR;
+        default:
+            break;
+    }
+    return 0;
 }
 
-Length::Length(Amount n) :_value(n) {
+Length::Length(Amount n) :Length(n, LengthUnit::M){
 
 }
 
