@@ -5,7 +5,7 @@
 #include "Length.h"
 
 bool Length::operator == (const Length &other)const {
-    return _value == other._value;
+    return _value == other._value && _unit == other._unit;
 }
 
 Length::Length(int n) :_value(n) {
@@ -14,4 +14,9 @@ Length::Length(int n) :_value(n) {
 
 Length::Length():Length(0) {
 
+}
+
+
+Length::Length(int _value, std::string unit) : _value(_value), _unit(unit)
+{
 }

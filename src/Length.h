@@ -6,9 +6,14 @@
 #define LENGTH_LENGTH_H
 
 
+#include <iosfwd>
+#include <string>
+
 class Length {
 public:
     Length(int n);
+
+    Length(int _value, std::string _unit);
 
     Length();
 
@@ -17,6 +22,7 @@ public:
 
 public:
     int _value;
+    std::string _unit;
 };
 
 
